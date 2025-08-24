@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lan 的個人網站</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<header class="top-nav">
+    <nav>
+        <a href="{{ url_for('home') }}">首頁</a>
+        <a href="{{ url_for('about') }}">關於我</a>
+        <a href="{{ url_for('portfolio') }}">作品集</a>
+        <a href="{{ url_for('contact') }}">聯絡我</a>
+    </nav>
+</header>
+<body>
+    <div class="card">
+        <div class="profile">
+            <img src="{{ url_for('static', filename='images/lan.jpg') }}" alt="Lan" class="avatar">
+            <h1>Lan</h1>
+            <!-- <h2>AI 影像處理工程師</h2> -->
+            <div class="social-icons">
+                <!-- <a href="#"><img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter"></a> -->
+            </div>
+        </div>
+        <div class="intro">
+            <h1>Hello</h1>
+            <p>這裡是我的個人網站，會分享我的專案、技能與故事。</p>
+            <div class="buttons">
+                <a href="/about" class="btn blue">關於我</a>
+                <a href="/portfolio" class="btn">作品集</a>
+                <a href="/contact" class="btn blue">聯絡我</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

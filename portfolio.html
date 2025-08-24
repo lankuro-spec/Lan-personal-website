@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lan 的作品集</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_portfolio.css') }}">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<header class="top-nav">
+    <nav>
+        <a href="{{ url_for('home') }}">首頁</a>
+        <a href="{{ url_for('about') }}">關於我</a>
+        <a href="{{ url_for('portfolio') }}">作品集</a>
+        <a href="{{ url_for('contact') }}">聯絡我</a>
+    </nav>
+</header>
+<body>
+    
+    <header>
+        <!-- <h1>一</h1> -->
+        <h1>我的作品集</h1>
+        <p>以下是我近期完成的專案與研究</p>
+    </header>
+
+    <main class="portfolio-container">
+        <!-- 作品卡片 -->
+        <div class="card" onclick="openModal('modal1')">
+            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="雞蛋瑕疵檢測系統">
+            <div class="card-content">
+                <h3>公司內部管理系統</h3>
+                <p>協助一間尚未資訊化的公司開發專屬的客製化網站，透過導入 HTML、JavaScript、PHP 與 MySQL 技術，建立完整的合約與訂單管理系統。</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('modal2')">
+            <img src="{{ url_for('static', filename='images/project2.png') }}" alt="AI 圖像辨識系統">
+            <div class="card-content">
+                <h3>瑕疵雞蛋檢測系統</h3>
+                <p>協助中小型養雞場建立一套成本低廉的瑕疵雞蛋檢測系統，有效降低出貨雞蛋的瑕疵率。</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('modal3')">
+            <img src="{{ url_for('static', filename='images/project3.png') }}" alt="智慧藥盒">
+            <div class="card-content">
+                <h3>智慧藥盒</h3>
+                <p>以 IoT 與 Flask 建構的智慧藥盒管理平台</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>公司內部管理系統</h2>
+            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="雞蛋瑕疵檢測系統">
+            <p>協助一間尚未資訊化的公司開發專屬的客製化網站，透過導入 HTML、JavaScript、PHP 與 MySQL 技術，建立完整的合約與訂單管理系統。</p>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>瑕疵雞蛋檢測系統</h2>
+            <img src="{{ url_for('static', filename='images/project2.png') }}" alt="AI 圖像辨識系統">
+            <p>協助中小型養雞場建立一套成本低廉的瑕疵雞蛋檢測系統，有效降低出貨雞蛋的瑕疵率。</p>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>智慧藥盒</h2>
+            <img src="{{ url_for('static', filename='images/project3.png') }}" alt="智慧藥盒">
+            <p>智慧藥盒結合 IoT 與後端系統，能提醒長者按時服藥，並支援雲端資料記錄。</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
